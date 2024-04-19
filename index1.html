@@ -16,7 +16,7 @@
             <div class="form login">
                 <span class="title"><h1 style="color: aliceblue;">Login</h1></span>
 
-                <form action="#" id="loginForm">
+                <form id="loginForm">
                     <div class="input-field">
                         <input type="text" id="loginEmail" placeholder="Enter your email" required>
                         <i class="uil uil-envelope icon"></i>
@@ -37,7 +37,7 @@
                     </div>
 
                     <div class="input-field button">
-                        <a href="index.html"><input type="button" value="Login Now" >Login now</a>
+                        <input type="button" value="Login Now" onclick="loginUser()">
                     </div>
                 </form>
 
@@ -52,7 +52,7 @@
             <div class="form signup">
                 <span class="title"><h1 style="color: aliceblue;">Register</h1></span>
 
-                <form action="#" id="signupForm">
+                <form id="signupForm">
                     <div class="input-field">
                         <input type="text" id="signupName" name="username" placeholder="Enter your name" required>
                         <i class="uil uil-user"></i>
@@ -86,7 +86,6 @@
     </div>
 
     
- <script src="script.js"></script>
     <script>
         function togglePassword(fieldId) {
             var passwordField = document.getElementById(fieldId);
@@ -107,24 +106,62 @@
         }
 
         function loginUser() {
-            // Add logic to handle login functionality
-            alert("You have Logged in");
+            var email = document.getElementById('loginEmail').value;
+            var password = document.getElementById('loginPassword').value;
+
+            // Perform basic client-side validation
+            if (!email.trim()) {
+                alert("Please enter your email.");
+                return;
+            }
+
+            if (!password.trim()) {
+                alert("Please enter your password.");
+                return;
+            }
+
+            // Here you can add logic for authentication
+            // For demonstration purposes, I'll just display an alert
+            alert("You have Logged in with email: " + email);
         }
 
         function showSignupForm() {
-           document.getElementById('container').classList.add('active');
-            document.getElementById('container').style.borderColor = '#4CAF50';  // Border color change
+            document.querySelector('.container').classList.add('active');
         }
 
         function showLoginForm() {
-            document.getElementById('container').classList.remove('active');
-            document.getElementById('container').style.borderColor = '#3498db';  // Border color change
-        
+            document.querySelector('.container').classList.remove('active');
         }
 
         function registerUser() {
+            function loginUser() {
+    var email = document.getElementById('loginEmail').value;
+    var password = document.getElementById('loginPassword').value;
+
+    // Perform basic client-side validation for email
+    if (!email.trim()) {
+        alert("Please enter your email.");
+        return;
+    }
+
+    // Perform basic client-side validation for password
+    if (!password.trim()) {
+        alert("Please enter your password.");
+        return;
+    }
+
+    // Check if the email and password match predefined values
+    if (email === "example@example.com" && password === "password123") {
+        // Successful login
+        alert("You have Logged in with email: " + email);
+    } else {
+        // Incorrect email or password
+        alert("Incorrect email or password. Please try again.");
+    }
+}
+
             // Add logic to handle user registration
-             alert("Thanks for creating account in Twitter!!")
+            alert("Thanks for creating account in TastyTrek!!");
         }
     </script>
 
