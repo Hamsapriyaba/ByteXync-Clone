@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="stylee.css">
+         
+    <title>Login & Registration Form</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="forms">
+            <div class="form login">
+                <span class="title"><h1 style="color: aliceblue;">Login</h1></span>
+
+                <form action="#" id="loginForm">
+                    <div class="input-field">
+                        <input type="text" id="loginEmail" placeholder="Enter your email" required>
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="loginPassword" class="password" placeholder="Enter your password" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw" onclick="togglePassword('loginPassword')"></i>
+                    </div>
+
+                    <div class="checkbox-text">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="logCheck">
+                            <label for="logCheck" class="text">Remember me</label>
+                        </div>
+                        
+                        <a href="#" class="text" onclick="forgotPassword()">Forgot password?</a>
+                    </div>
+
+                    <div class="input-field button">
+                        <a href="myindex.html"><input type="button" value="Login Now" >Login now</a>
+                    </div>
+                </form>
+
+                <div class="login-signup">
+                    <span class="text">Not a member?
+                        <a href="#" class="text signup-link" onclick="showSignupForm()">Signup now</a>
+                    </span>
+                </div>
+            </div>
+
+      
+            <div class="form signup">
+                <span class="title"><h1 style="color: aliceblue;">Register</h1></span>
+
+                <form action="#" id="signupForm">
+                    <div class="input-field">
+                        <input type="text" id="signupName" name="username" placeholder="Enter your name" required>
+                        <i class="uil uil-user"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" id="signupEmail" name="email" placeholder="Enter your email" required>
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="signupPassword" name="password" class="password" placeholder="Create a password" required>
+                        <i class="uil uil-lock icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="confirmPassword" class="password" placeholder="Confirm a password" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw" onclick="togglePassword('confirmPassword')"></i>
+                    </div>
+
+                    <div class="input-field button">
+                        <input type="button" value="Signup Now" onclick="registerUser()">
+                    </div>
+                </form>
+
+                <div class="login-signup">
+                    <span class="text">Already a member?
+                        <a href="#" class="text login-link" onclick="showLoginForm()">Login now</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+ <script src="script.js"></script>
+    <script>
+        function togglePassword(fieldId) {
+            var passwordField = document.getElementById(fieldId);
+            var eyeIcon = passwordField.nextElementSibling;
+
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                eyeIcon.classList.replace("uil-eye-slash", "uil-eye");
+            } else {
+                passwordField.type = "password";
+                eyeIcon.classList.replace("uil-eye", "uil-eye-slash");
+            }
+        }
+
+        function forgotPassword() {
+            // Add logic to handle forgot password functionality
+            alert("Forgot password clicked!");
+        }
+
+        function loginUser() {
+            // Add logic to handle login functionality
+            alert("You have Logged in");
+        }
+
+        function showSignupForm() {
+           document.getElementById('container').classList.add('active');
+            document.getElementById('container').style.borderColor = '#4CAF50';  // Border color change
+        }
+
+        function showLoginForm() {
+            document.getElementById('container').classList.remove('active');
+            document.getElementById('container').style.borderColor = '#3498db';  // Border color change
+        
+        }
+
+        function registerUser() {
+            // Add logic to handle user registration
+             alert("Thanks for creating account in TastyTrek!!")
+        }
+    </script>
+
+</body>
+</html>
